@@ -1,8 +1,8 @@
-package com.tranbaquan.voice.command.transform.filter;
+package com.tranbaquan.voice.command.filter.emphasis;
 
 
 /*
- * Copyright (c) $year.
+ * Copyright (c) 2019.
  * @author tranbaquan
  */
 public class PreEmphasisFunction {

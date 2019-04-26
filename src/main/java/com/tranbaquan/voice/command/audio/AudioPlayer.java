@@ -9,7 +9,7 @@ import java.io.File;
 import java.io.IOException;
 
 /*
- * Copyright (c) $year.
+ * Copyright (c) 2019.
  * @author tranbaquan
  */
 public class AudioPlayer {
