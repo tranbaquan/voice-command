@@ -8,40 +8,21 @@ package com.tranbaquan.voice.command.transform.fourier;
 import com.tranbaquan.voice.command.utils.Complex;
 
 public class FastFourierTransform extends FourierTransform {
-    @Override
-    public Complex[] transform(float[] data) {
-        int n = data.length;
-        Complex[] transformed = new Complex[n];
-        for (int i = 0; i < n; i++) {
-            transformed[i] = new Complex(data[i]);
-        }
-        return fft(transformed, false);
-    }
 
     @Override
     public Complex[] transform(Complex[] data) {
-        return fft(data, false);
-    }
-
-    @Override
-    public Complex[] invert(float[] data) {
-        int n = data.length;
-        Complex[] transformed = new Complex[n];
-        for (int i = 0; i < n; i++) {
-            transformed[i] = new Complex(data[i]);
-        }
-        return fft(transformed, true);
+        return fft(data, false, 9);
     }
 
     @Override
     public Complex[] invert(Complex[] data) {
-        return fft(data, true);
+        return fft(data, true, 9);
     }
 
     private int inverseNBit(int n, int index) {
         int i = 0;
         int j = n - 1;
-        for (; i <= j; i++) {
+        for (; i <= j; i++, j--) {
             if ((index >> i & 1) != (index >> j & 1)) {
                 index ^= 1 << i;
                 index ^= 1 << j;
@@ -50,12 +31,14 @@ public class FastFourierTransform extends FourierTransform {
         return index;
     }
 
-    private Complex[] fft(Complex[] data, boolean isInvert) {
+    private Complex[] fft(Complex[] data, boolean isInvert, int exponent) {
         int n = data.length;
-        Complex[] transformed = data;
+        Complex[] transformed = new Complex[data.length];
+        System.arraycopy(data, 0, transformed, 0, data.length);
         int j;
         for (int i = 0; i < n; i++) {
-            j = inverseNBit(2, i);
+            // FIXME need to change
+            j = inverseNBit(exponent, i);
             if (i < j) {
                 transformed[i] = data[j];
                 transformed[j] = data[i];
