@@ -8,23 +8,27 @@ package com.tranbaquan.voice.command.classify.lloyd;
 import java.util.LinkedList;
 
 public class QuantizationVector {
-    protected LinkedList<double[]> data;
+    protected LinkedList<float[]> data;
     protected int featureSize;
-
-    public QuantizationVector() {
-        data = new LinkedList<>();
-    }
 
     public QuantizationVector(int featureSize) {
         data = new LinkedList<>();
         this.featureSize = featureSize;
     }
 
-    public void addFeature(double[] feature) {
+    public void addFeature(float[] feature) {
         data.add(feature);
     }
 
-    public void setFeatureSize(int featureSize) {
-        this.featureSize = featureSize;
+    public int getFeatureSize() {
+        return featureSize;
+    }
+
+    public LinkedList<float[]> getData() {
+        return data;
+    }
+
+    public void setData(LinkedList<float[]> data) {
+        this.data = data;
     }
 }

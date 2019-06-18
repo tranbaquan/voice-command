@@ -1,17 +1,8 @@
 import com.tranbaquan.voice.command.audio.AudioPlayer;
+import com.tranbaquan.voice.command.classify.lloyd.CodeBook;
+import com.tranbaquan.voice.command.classify.lloyd.QuantizationVector;
 import com.tranbaquan.voice.command.feature.FeatureExtractor;
 import com.tranbaquan.voice.command.feature.FeatureVector;
-import com.tranbaquan.voice.command.filter.emphasis.PreEmphasisFunction;
-import com.tranbaquan.voice.command.filter.filterbanks.FilterBanks;
-import com.tranbaquan.voice.command.filter.frame.FramingFunction;
-import com.tranbaquan.voice.command.filter.pcm.PCM;
-import com.tranbaquan.voice.command.filter.window.HammingWindow;
-import com.tranbaquan.voice.command.filter.window.WindowFunction;
-import com.tranbaquan.voice.command.transform.discrete_cosin.DiscreteCosineTransform;
-import com.tranbaquan.voice.command.transform.fourier.FastFourierTransform;
-import com.tranbaquan.voice.command.utils.Complex;
-
-import java.util.Arrays;
 
 public class VoiceCommandRunner {
     public static void main(String[] args) {
@@ -20,6 +11,14 @@ public class VoiceCommandRunner {
         FeatureExtractor extractor = new FeatureExtractor(player);
         extractor.extractFeature();
         FeatureVector vector = extractor.getFeatureVector();
+        QuantizationVector quantization = new QuantizationVector(13);
+        for (int i = 0; i < vector.getMfcc().length; i++) {
+            quantization.addFeature(vector.getMfcc()[i]);
+        }
+        CodeBook codeBook = new CodeBook();
+        codeBook.setQuantization(quantization);
+
+        codeBook.initialize();
 //        System.out.println(player.getFormat().getSampleRate());
 //        player.play();
 //        PCM pcm = new PCM();
