@@ -44,7 +44,7 @@ public class Centroid extends QuantizationVector {
     }
 
     public double getDistortion() {
-        return distortion;
+        return distortion/ data.size();
     }
 
     public void setDistortion(double distortion) {

@@ -1,12 +1,15 @@
 import com.tranbaquan.voice.command.audio.AudioPlayer;
+import com.tranbaquan.voice.command.classify.hmm.HiddenMarkovModel;
 import com.tranbaquan.voice.command.classify.lloyd.CodeBook;
 import com.tranbaquan.voice.command.classify.lloyd.QuantizationVector;
 import com.tranbaquan.voice.command.feature.FeatureExtractor;
 import com.tranbaquan.voice.command.feature.FeatureVector;
 
+import java.util.Arrays;
+
 public class VoiceCommandRunner {
     public static void main(String[] args) {
-        String audioPath = "E:\\Music\\all-the-way.wav";
+        String audioPath = "E:\\Music\\hello2.wav";
         AudioPlayer player = new AudioPlayer(audioPath);
         FeatureExtractor extractor = new FeatureExtractor(player);
         extractor.extractFeature();
@@ -19,6 +22,12 @@ public class VoiceCommandRunner {
         codeBook.setQuantization(quantization);
 
         codeBook.initialize();
+        HiddenMarkovModel hmm = new HiddenMarkovModel(5, codeBook.getSize());
+        int[] q = codeBook.quantize(vector);
+        System.out.println(Arrays.toString(q));
+
+        hmm.train(q, 20);
+        hmm.print();
 //        System.out.println(player.getFormat().getSampleRate());
 //        player.play();
 //        PCM pcm = new PCM();

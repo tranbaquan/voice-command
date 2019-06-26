@@ -5,6 +5,8 @@ package com.tranbaquan.voice.command.classify.lloyd;
  * @author tranbaquan
  */
 
+import com.tranbaquan.voice.command.feature.FeatureVector;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -13,12 +15,16 @@ import java.util.List;
 public class CodeBook {
     private QuantizationVector quantization;
     private List<Centroid> centroids;
-    private final int size = 64;
+    private final int size = 8;
     private final double splitRate = 0.01;
 
     public CodeBook() {
         quantization = new QuantizationVector(13);
         centroids = new LinkedList<>();
+    }
+
+    public int getSize() {
+        return size;
     }
 
     public QuantizationVector getQuantization() {
@@ -111,5 +117,13 @@ public class CodeBook {
             distance += Math.pow(centroid[i] - feature[i], 2);
         }
         return Math.sqrt(distance);
+    }
+
+    public int[] quantize(FeatureVector featureVector){
+        int[] output = new int[featureVector.getMfcc().length];
+        for (int i = 0; i < featureVector.getMfcc().length; i++) {
+            output[i] = findClosestCentroidIndex(centroids, featureVector.getMfcc()[i]);
+        }
+        return output;
     }
 }
