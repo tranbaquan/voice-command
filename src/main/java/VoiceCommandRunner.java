@@ -23,10 +23,11 @@ public class VoiceCommandRunner {
 
         codeBook.initialize();
         HiddenMarkovModel hmm = new HiddenMarkovModel(5, codeBook.getSize());
+        hmm.print();
         int[] q = codeBook.quantize(vector);
         System.out.println(Arrays.toString(q));
-
-        hmm.train(q, 20);
+//        System.out.println(Arrays.toString(hmm.viterbi(q)));
+        hmm.reestimate(q, 20);
         hmm.print();
 //        System.out.println(player.getFormat().getSampleRate());
 //        player.play();

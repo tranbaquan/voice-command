@@ -6,6 +6,7 @@ package com.tranbaquan.voice.command.classify.hmm;
  */
 
 import java.text.DecimalFormat;
+import java.util.Arrays;
 
 public class HiddenMarkovModel {
     private int numStates;
@@ -25,7 +26,11 @@ public class HiddenMarkovModel {
     }
 
     public void initialize() {
-        pi[0] = 1;
+        pi[0] = 0.1;
+        pi[1] = 0.3;
+        pi[2] = 0.4;
+        pi[3] = 0.1;
+        pi[4] = 0.1;
         for (int i = 0; i < a.length; i++) {
             for (int j = 0; j < a[i].length; j++) {
                 a[i][j] = 1.0 / a[i].length;
@@ -49,9 +54,28 @@ public class HiddenMarkovModel {
                 for (int k = 0; k < numStates; k++) {
                     forward[j][i] += forward[k][i - 1] * a[k][j] * b[j][obs[i]];
                 }
+//                forward[j][i] = Math.log10(forward[j][i]);
+//                forward[j][i] *=  b[j][obs[i]];
             }
         }
+        System.out.println(Arrays.deepToString(forward));
         return forward;
+    }
+
+    public double[][] backward(int[] obs) {
+        double[][] backward = new double[numStates][obs.length];
+        for (int i = 0; i < numStates; i++) {
+            backward[i][obs.length - 1] = 1;
+        }
+
+        for (int i = obs.length - 2; i >= 0; i--) {
+            for (int j = 0; j < numStates; j++) {
+                for (int k = 0; k < numStates; k++) {
+                    backward[j][i] += a[j][k] * b[k][obs[j + 1]] * backward[k][i + 1];
+                }
+            }
+        }
+        return backward;
     }
 
     public int[] viterbi(int[] obs) {
@@ -97,8 +121,8 @@ public class HiddenMarkovModel {
 
         for (int s = 0; s < steps; s++) {
             // calculation of Forward- und Backward Variables from the current model
-            forward = forwardProc(observations);
-            backward = backwardProc(observations);
+            forward = forward(observations);
+            backward = backward(observations);
 
             // re-estimation of initial state probabilities
             for (int i = 0; i < numStates; i++)
@@ -130,9 +154,49 @@ public class HiddenMarkovModel {
                     b1[i][k] = divide(num, denom);
                 }
             }
-            pi = pi1;
-            a = a1;
-            b = b1;
+            System.arraycopy(pi1, 0, pi, 0, pi.length);
+            System.arraycopy(a1, 0, a, 0, a.length);
+            System.arraycopy(b1, 0, b, 0, b.length);
+//            pi = pi1;
+//            a = a1;
+//            b = b1;
+        }
+    }
+
+    public void reestimate(int[] obs, int step) {
+        double[][] forward;
+        double[][] backward;
+        double num;
+        double denom;
+        for (int s = 0; s < step; s++) {
+            forward = forward(obs);
+            backward = backward(obs);
+            for (int i = 0; i < numStates; i++) {
+                pi[i] = gamma(i, 0, forward, backward);
+            }
+            for (int i = 0; i < numStates; i++) {
+                for (int j = 0; j < numStates; j++) {
+                    num = 0;
+                    denom = 0;
+                    for (int k = 0; k < obs.length - 1; k++) {
+                        num += xi(k, i, j, obs, forward, backward);
+                        denom += gamma(j, k, forward, backward);
+                    }
+                    a[i][j] = divide(num, denom);
+                }
+            }
+            for (int i = 0; i < numStates; i++) {
+                for (int j = 0; j < numSymbols; j++) {
+                    num = 0;
+                    denom = 0;
+                    for (int k = 0; k < obs.length; k++) {
+                        num += gamma(i, k, forward, backward) * (j == obs[k] ? 1 : 0);
+                        denom += gamma(i, k, forward, backward);
+                    }
+                    b[i][j] = divide(num, denom);
+                }
+            }
+
         }
     }
 
@@ -186,6 +250,21 @@ public class HiddenMarkovModel {
         for (int k = 0; k < numStates; k++)
             denom += (forward[k][t] * backward[k][t]);
 
+        return divide(num, denom);
+    }
+
+    public double xi(int t, int i, int j, int[] obs, double[][] forward, double[][] backward) {
+        double num = 0;
+        if (t == obs.length - 1)
+            num = forward[i][t] * a[i][j];
+        else
+            num = forward[i][t] * a[i][j] * b[j][obs[t + 1]] * backward[j][t + 1];
+        double denom = 0;
+        for (int k = 0; k < numStates; k++) {
+            for (int l = 0; l < numStates; l++) {
+                denom += forward[k][t] * a[k][l] * b[l][obs[t + 1]] * backward[l][t + 1];
+            }
+        }
         return divide(num, denom);
     }
 
