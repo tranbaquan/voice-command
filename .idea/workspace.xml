@@ -2,24 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="619a156e-ffb2-4d1d-8883-2fad7f34db71" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/JaCHMM.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/smile_core_1_5_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/Test1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/Test2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/Trainner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/classify/hmm/HMM.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/classify/hmm/HMMProcess.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/5668.dict" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/5668.lm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/5668.word" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/TAR1374.tgz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/VoiceCommandRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/VoiceCommandRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/classify/hmm/HiddenMarkovModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/classify/hmm/HiddenMarkovModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/trainning/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/trainning/Dictionary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/sphinx4/Recognizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/Test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/Test1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/Test2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/Test2.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -48,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/Test2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="42" column="44" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="44" />
+            <state relative-caret-position="85">
+              <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -63,8 +49,33 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/VoiceCommandRunner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+            <state relative-caret-position="481">
+              <caret line="36" column="20" lean-forward="true" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/sphinx4/Recognizer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="257">
+              <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#807#808#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/Test1.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="62" column="5" lean-forward="true" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -96,7 +107,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/classify/lloyd/CodeBook.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/Test.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/utils/FileWriter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/Test1.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/Trainner.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/5668.word" />
@@ -105,6 +115,8 @@
         <option value="$PROJECT_DIR$/src/main/resources/5668.dict" />
         <option value="$PROJECT_DIR$/src/main/resources/5668.jsgf" />
         <option value="$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/Test2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/sphinx4/Recognizer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/Test1.java" />
       </list>
     </option>
   </component>
@@ -169,12 +181,9 @@
               <item name="voice-command" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="voice-command" type="b2602c69:ProjectViewProjectNode" />
-              <item name="voice-command" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="command" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="voice-command" type="b2602c69:ProjectViewProjectNode" />
@@ -329,10 +338,10 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3290469" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3290469" />
       <window_info id="DB Browser" order="1" weight="0.32980332" />
       <window_info id="Project Explorer" order="2" weight="0.32980332" />
-      <window_info id="Job Explorer" order="3" />
+      <window_info id="Job Explorer" order="3" weight="0.32980332" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="5" />
       <window_info id="Designer" order="6" />
@@ -341,12 +350,12 @@
       <window_info id="Favorites" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.47463176" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.47463176" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="9" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3289689" />
@@ -368,13 +377,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/filter/filterbanks/FilterBanks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/transform/discrete_cosin/DiscreteCosineTransform.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
@@ -563,16 +565,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/Test1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="68" column="5" lean-forward="true" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/Java Libs/jahmm-0.6.2.jar!/be/ac/ulg/montefiore/run/jahmm/apps/sample/SimpleExample.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-51">
@@ -596,9 +588,6 @@
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/learntHmm.dot">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/Trainner.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -700,16 +689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/VoiceCommandRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/5668.lm">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -727,10 +706,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/learntHmm.dot">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/VoiceCommandRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="36" column="20" lean-forward="true" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/Test2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="42" column="44" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="44" />
+        <state relative-caret-position="85">
+          <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/sphinx4/Recognizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#807#808#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tranbaquan/voice/command/Test1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="62" column="5" lean-forward="true" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

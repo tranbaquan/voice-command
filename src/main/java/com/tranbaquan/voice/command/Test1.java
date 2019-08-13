@@ -5,18 +5,12 @@ package com.tranbaquan.voice.command;
  * @author tranbaquan
  */
 
-import be.ac.ulg.montefiore.run.jahmm.*;
-import be.ac.ulg.montefiore.run.jahmm.apps.sample.SimpleExample;
-import be.ac.ulg.montefiore.run.jahmm.draw.GenericHmmDrawerDot;
-import be.ac.ulg.montefiore.run.jahmm.learn.BaumWelchLearner;
-import be.ac.ulg.montefiore.run.jahmm.learn.KMeansLearner;
-import be.ac.ulg.montefiore.run.jahmm.toolbox.KullbackLeiblerDistanceCalculator;
-import be.ac.ulg.montefiore.run.jahmm.toolbox.MarkovGenerator;
+import be.ac.ulg.montefiore.run.jahmm.Hmm;
+import be.ac.ulg.montefiore.run.jahmm.ObservationInteger;
+import be.ac.ulg.montefiore.run.jahmm.OpdfInteger;
+import be.ac.ulg.montefiore.run.jahmm.OpdfIntegerFactory;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 
 public class Test1 {
     public static void main(String[] argv) throws IOException {
