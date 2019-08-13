@@ -27,8 +27,8 @@ public class HiddenMarkovModel {
 
     public void initialize() {
         pi[0] = 0.1;
-        pi[1] = 0.3;
-        pi[2] = 0.4;
+        pi[1] = 0.2;
+        pi[2] = 0.5;
         pi[3] = 0.1;
         pi[4] = 0.1;
         for (int i = 0; i < a.length; i++) {
@@ -43,6 +43,17 @@ public class HiddenMarkovModel {
         }
     }
 
+    public double p(int[] obs) {
+        double[][] forward = forward(obs);
+        double sum = 0;
+        for (int i = 0; i < forward.length; i++) {
+            for (int j = 0; j < forward[i].length; j++) {
+                sum += forward[i][j];
+            }
+        }
+        return sum;
+    }
+
     //  P(O|λ) = Xm(i= 0: N) αT(i)
     public double[][] forward(int[] obs) {
         double[][] forward = new double[numStates][obs.length];
@@ -54,11 +65,8 @@ public class HiddenMarkovModel {
                 for (int k = 0; k < numStates; k++) {
                     forward[j][i] += forward[k][i - 1] * a[k][j] * b[j][obs[i]];
                 }
-//                forward[j][i] = Math.log10(forward[j][i]);
-//                forward[j][i] *=  b[j][obs[i]];
             }
         }
-        System.out.println(Arrays.deepToString(forward));
         return forward;
     }
 
@@ -157,9 +165,6 @@ public class HiddenMarkovModel {
             System.arraycopy(pi1, 0, pi, 0, pi.length);
             System.arraycopy(a1, 0, a, 0, a.length);
             System.arraycopy(b1, 0, b, 0, b.length);
-//            pi = pi1;
-//            a = a1;
-//            b = b1;
         }
     }
 

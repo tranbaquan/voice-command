@@ -1,3 +1,5 @@
+package com.tranbaquan.voice.command;
+
 import com.tranbaquan.voice.command.audio.AudioPlayer;
 import com.tranbaquan.voice.command.classify.hmm.HiddenMarkovModel;
 import com.tranbaquan.voice.command.classify.lloyd.CodeBook;
@@ -7,9 +9,14 @@ import com.tranbaquan.voice.command.feature.FeatureVector;
 
 import java.util.Arrays;
 
+/*
+ * Copyright (c) 2019.
+ * @author tranbaquan
+ */
+
 public class VoiceCommandRunner {
     public static void main(String[] args) {
-        String audioPath = "E:\\Music\\hello2.wav";
+        String audioPath = "D:\\Train\\play\\play-4.wav";
         AudioPlayer player = new AudioPlayer(audioPath);
         FeatureExtractor extractor = new FeatureExtractor(player);
         extractor.extractFeature();
@@ -26,9 +33,20 @@ public class VoiceCommandRunner {
         hmm.print();
         int[] q = codeBook.quantize(vector);
         System.out.println(Arrays.toString(q));
-//        System.out.println(Arrays.toString(hmm.viterbi(q)));
         hmm.reestimate(q, 20);
         hmm.print();
+        System.out.println(hmm.p(q));
+
+//        String audioPath1 = "D:\\hello-3.wav";
+//        AudioPlayer player1 = new AudioPlayer(audioPath1);
+//        FeatureExtractor extractor1 = new FeatureExtractor(player1);
+//        extractor1.extractFeature();
+//        FeatureVector vector1 = extractor1.getFeatureVector();
+//        int[] q1 = codeBook.quantize(vector1);
+//        System.out.println(hmm.p(q1));
+
+
+
 //        System.out.println(player.getFormat().getSampleRate());
 //        player.play();
 //        PCM pcm = new PCM();
@@ -57,6 +75,5 @@ public class VoiceCommandRunner {
 //        Complex[] k2 = fourier.invert(k1);
 //        System.out.println(Arrays.toString(k1));
 //        System.out.println(Arrays.toString(k2));
-
     }
 }

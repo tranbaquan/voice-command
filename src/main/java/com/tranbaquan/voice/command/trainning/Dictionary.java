@@ -12,5 +12,6 @@ public enum  Dictionary {
     PREVIOUS,
     SPEAK_UP,
     SPEAK_DOWN,
-    CLOSE
+    CLOSE,
+    UNKNOWN
 }

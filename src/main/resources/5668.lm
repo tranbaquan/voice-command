@@ -1,0 +1,57 @@
+Language model created by QuickLM on Sun Aug 11 12:50:34 EDT 2019
+Copyright (c) 1996-2010 Carnegie Mellon University and Alexander I. Rudnicky
+
+The model is in standard ARPA format, designed by Doug Paul while he was at MITRE.
+
+The code that was used to produce this language model is available in Open Source.
+Please visit http://www.speech.cs.cmu.edu/tools/ for more information
+
+The (fixed) discount mass is 0.5. The backoffs are computed using the ratio method.
+This model based on a corpus of 8 sentences and 10 words
+
+\data\
+ngram 1=10
+ngram 2=16
+ngram 3=8
+
+\1-grams:
+-0.7782 </s> -0.3010
+-0.7782 <s> -0.2218
+-1.6812 CLOSE -0.2218
+-1.6812 NEXT -0.2218
+-1.6812 PAUSE -0.2218
+-1.6812 PLAY -0.2218
+-1.6812 PREVIOUS -0.2218
+-1.6812 RESUME -0.2218
+-1.6812 SPEAK-DOWN -0.2218
+-1.6812 SPEAK-UP -0.2218
+
+\2-grams:
+-1.2041 <s> CLOSE 0.0000
+-1.2041 <s> NEXT 0.0000
+-1.2041 <s> PAUSE 0.0000
+-1.2041 <s> PLAY 0.0000
+-1.2041 <s> PREVIOUS 0.0000
+-1.2041 <s> RESUME 0.0000
+-1.2041 <s> SPEAK-DOWN 0.0000
+-1.2041 <s> SPEAK-UP 0.0000
+-0.3010 CLOSE </s> -0.3010
+-0.3010 NEXT </s> -0.3010
+-0.3010 PAUSE </s> -0.3010
+-0.3010 PLAY </s> -0.3010
+-0.3010 PREVIOUS </s> -0.3010
+-0.3010 RESUME </s> -0.3010
+-0.3010 SPEAK-DOWN </s> -0.3010
+-0.3010 SPEAK-UP </s> -0.3010
+
+\3-grams:
+-0.3010 <s> CLOSE </s>
+-0.3010 <s> NEXT </s>
+-0.3010 <s> PAUSE </s>
+-0.3010 <s> PLAY </s>
+-0.3010 <s> PREVIOUS </s>
+-0.3010 <s> RESUME </s>
+-0.3010 <s> SPEAK-DOWN </s>
+-0.3010 <s> SPEAK-UP </s>
+
+\end\
